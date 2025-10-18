@@ -266,7 +266,7 @@ class ControlLDM(DDPM):
         self.extraction = 'dinov2'
         self.t = 0
         if self.extraction=='dinov2':
-            self.dinov2_vitl14 = torch.hub.load('E:/academic/Pytorch/crack-generate/self_DM_detail/dinov2', 'dinov2_vitl14',trust_repo=True, source='local')
+            self.dinov2_vitl14 = torch.hub.load('E:/dinov2', 'dinov2_vitl14',trust_repo=True, source='local')
             self.dinov2_vitl14.eval()
             self.dinov2_vitl14.train = disabled_train
             for param in self.dinov2_vitl14.parameters():
@@ -275,7 +275,7 @@ class ControlLDM(DDPM):
         
         if self.extraction=='seecoder':
             self.seecoder = SemanticContextEncoder()
-            seecoder_dict = load_file('E:/academic/Pytorch/crack-generate/CAT-DM-main/seecoder/seecoder-control.safetensors', device='cpu')
+            seecoder_dict = load_file('E:/seecoder/seecoder-control.safetensors', device='cpu')
             self.seecoder.load_state_dict(seecoder_dict, strict=True)
             self.seecoder.eval()
             self.seecoder.train = disabled_train
