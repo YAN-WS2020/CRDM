@@ -142,8 +142,6 @@ class TestDataset(data.Dataset):
         fg_img1 = torchvision.transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))(fg_img1)
         # 生成 inpaint 和 hint
         inpaint = img1 * (1-max_mask1) #img1 * (1-max_mask1) + edge * torch.randn_like(img1)
-        hint1 = torchvision.transforms.Normalize((0.5, 0.5, 0.5),(0.5, 0.5, 0.5))(hint1)
-
         
         hint1 = torch.cat((mask1,edge),dim = 0)
 
