@@ -13,6 +13,7 @@ from ldm.modules.diffusionmodules.util import (
     zero_module,
     timestep_embedding,
 )
+from ldm.models.diffusion.ddpm import DDPM
 from ldm.modules.attention import SpatialTransformer
 from ldm.modules.diffusionmodules.openaimodel import UNetModel, TimestepEmbedSequential, ResBlock, Downsample, AttentionBlock
 from ldm.util import instantiate_from_config, default
