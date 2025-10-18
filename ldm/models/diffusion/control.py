@@ -13,19 +13,16 @@ from ldm.modules.diffusionmodules.util import (
     zero_module,
     timestep_embedding,
 )
-from ldm.models.diffusion.ddpm import DDPM
 from ldm.modules.attention import SpatialTransformer
 from ldm.modules.diffusionmodules.openaimodel import UNetModel, TimestepEmbedSequential, ResBlock, Downsample, AttentionBlock
 from ldm.util import instantiate_from_config, default
-from ldm.models.diffusion.ddim2 import DDIMSampler
-from ldm.models.diffusion.plms2 import PLMSSampler
+from ldm.models.diffusion.ddim import DDIMSampler
 from safetensors.torch import load_file, save_file
 from collections import OrderedDict
 import torch
 from torch.optim.optimizer import Optimizer
 from torch.optim.lr_scheduler import LambdaLR
 from seecoder.lib.model_zoo.seecoder import SemanticContextEncoder
-from ldm.modules.encoders.detail_encoder.encoder_acrossatt import dinov2_decoder
 import numpy as np
 def disabled_train(self, mode=True):
     return self
