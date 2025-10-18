@@ -1,6 +1,6 @@
 model:
   base_learning_rate: 3e-05
-  target: ldm.models.diffusion.control2.ControlLDM
+  target: ldm.models.diffusion.control.ControlLDM
   params:
     linear_start: 0.00085
     linear_end: 0.0120
@@ -13,7 +13,7 @@ model:
     use_ema: False
 
     control_stage_config:
-      target: ldm.models.diffusion.control2.ControlNet
+      target: ldm.models.diffusion.control.ControlNet
       params:
         use_checkpoint: True
         in_channels: 9
