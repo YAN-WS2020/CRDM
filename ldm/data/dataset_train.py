@@ -395,7 +395,6 @@ class ImageDataset(data.Dataset):
         
         inpaint = img_512 * (1-max_mask256)  #+ edge * torch.randn_like(img_512)
         hint1 = torch.cat((mask_512,edge), dim = 0)
-        #hint1 = pose_256 #torch.cat((edge,mask_512,mask_512), dim = 0)
         
         return {"GT": img_512,                  
                 "inpaint_image": inpaint,  
